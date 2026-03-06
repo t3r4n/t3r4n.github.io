@@ -132,7 +132,6 @@ nav {
   z-index: 0;
 }
 
-/* Diagonal line grid */
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -518,8 +517,6 @@ h1 .name-italic {
 .exp-item:first-child { padding-top: 0; }
 .exp-item:last-child { border-bottom: none; }
 
-.exp-left {}
-
 .exp-date {
   font-size: 11px;
   letter-spacing: 1.5px;
@@ -540,8 +537,6 @@ h1 .name-italic {
   border-radius: 2px;
   margin-top: 4px;
 }
-
-.exp-right {}
 
 .exp-title {
   font-family: 'Playfair Display', serif;
@@ -829,7 +824,7 @@ h1 .name-italic {
 /* Photo grid */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 3px;
   background: rgba(141,192,126,0.06);
 }
@@ -858,39 +853,6 @@ h1 .name-italic {
 .photo-slot:hover img {
   filter: grayscale(0%) brightness(1);
   transform: scale(1.04);
-}
-
-.photo-slot-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: rgba(14,26,12,0.8);
-  border: 1px dashed rgba(141,192,126,0.15);
-  transition: background 0.3s ease, border-color 0.3s;
-}
-
-.photo-slot:hover .photo-slot-placeholder {
-  background: rgba(30,61,21,0.6);
-  border-color: rgba(141,192,126,0.35);
-}
-
-.photo-slot-placeholder .ph-icon {
-  font-size: 28px;
-  opacity: 0.35;
-}
-
-.photo-slot-placeholder .ph-text {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(250,248,243,0.2);
-  text-align: center;
-  padding: 0 16px;
-  line-height: 1.6;
 }
 
 .photo-overlay {
@@ -943,8 +905,6 @@ h1 .name-italic {
   margin-bottom: 80px;
   align-items: start;
 }
-
-.bayes-text-block {}
 
 .bayes-text-block h3 {
   font-family: 'Playfair Display', serif;
@@ -1021,7 +981,6 @@ h1 .name-italic {
   letter-spacing: 0.5px;
 }
 
-/* Charts */
 .charts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1037,7 +996,6 @@ h1 .name-italic {
 }
 
 .chart-card:hover { background: rgba(14,26,12,0.9); }
-
 .chart-card.span2 { grid-column: 1 / -1; }
 
 .chart-heading {
@@ -1057,7 +1015,6 @@ h1 .name-italic {
   font-weight: 300;
 }
 
-/* Beta bars */
 .beta-chart { display:flex; flex-direction:column; gap:9px; }
 
 .beta-row {
@@ -1104,7 +1061,6 @@ h1 .name-italic {
 
 .beta-val.n { color: #c4956a; }
 
-/* Posterior SVG */
 .post-wrap {
   height: 190px;
   margin-top: 4px;
@@ -1134,7 +1090,6 @@ h1 .name-italic {
   border-radius: 2px;
 }
 
-/* Country cards */
 .country-grid {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -1194,7 +1149,6 @@ h1 .name-italic {
   font-weight: 300;
 }
 
-/* Insight cards */
 .insight-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -1345,6 +1299,9 @@ footer {
   .section, .exp-wrap, .skills-wrap, .projects-wrap, .bayes-wrap, .contact-wrap { padding:60px 24px; }
   .stats-inner { grid-template-columns:repeat(2,1fr); }
   h1 { letter-spacing:-1px; }
+  .photo-grid { grid-template-columns: 1fr !important; }
+  .photo-slot.tall { aspect-ratio: 4/3; grid-row: span 1; }
+  .quitel-intro { grid-template-columns: 1fr; gap: 40px; }
 }
 
 ::-webkit-scrollbar { width:4px; }
@@ -1447,7 +1404,7 @@ footer {
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#bayes">Research</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#1e6a7b6c7f70306d767f6c77752f5e79737f7772307d7173" class="nav-cta">Hire me</a></li>
+    <li><a href="mailto:sharik@example.com" class="nav-cta">Hire me</a></li>
   </ul>
 </nav>
 
@@ -1468,18 +1425,10 @@ footer {
 
     <div class="hero-bottom r" style="transition-delay:.4s">
       <div class="hero-desc">
-       <p>
-  Junior Data Scientist & strategy analyst. I build solutions using data, ML, and automation to turn complex information into clear decisions.
-  I enjoy creating simple, useful, and high-impact products — from dashboards to predictive models.
-</p>
-
-<p>
-  I’ve contributed to projects at <strong>tech companies like Uber</strong>, building automated pipelines and operational dashboards used across <strong>13 countries</strong>.
-</p>
-
-<p>
-  I collaborate with global communities such as <strong>WiDS Stanford</strong> and <strong>Women Techmakers</strong>, and communicate data science in a friendly, accessible way through my podcast <em>Atípicos</em>.
-</p></div>
+        <p>Junior Data Scientist &amp; strategy analyst. I build solutions using data, ML, and automation to turn complex information into clear decisions. I enjoy creating simple, useful, and high-impact products — from dashboards to predictive models.</p>
+        <p>I've contributed to projects at <strong>tech companies like Uber</strong>, building automated pipelines and operational dashboards used across <strong>13 countries</strong>.</p>
+        <p>I collaborate with global communities such as <strong>WiDS Stanford</strong> and <strong>Women Techmakers</strong>, and communicate data science in a friendly, accessible way through my podcast <em>Atípicos</em>.</p>
+      </div>
       <div class="hero-meta">
         <div class="hero-badge">
           <span class="dot"></span>
@@ -1489,7 +1438,7 @@ footer {
       </div>
     </div>
 
-    <div style="position:absolute;right:60px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:8px;" class="r" style="transition-delay:.6s">
+    <div style="position:absolute;right:60px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:8px;" class="r">
       <div class="scroll-hint-line"></div>
       <div class="scroll-hint">Scroll</div>
     </div>
@@ -1509,7 +1458,6 @@ footer {
     <div class="ticker-item">WiDS Stanford Ambassador</div>
     <div class="ticker-item">Women Techmakers</div>
     <div class="ticker-item">Podcast Atípicos</div>
-    <!-- repeat for seamless loop -->
     <div class="ticker-item">PyMC · Bayesian Modeling</div>
     <div class="ticker-item">Hierarchical Regression</div>
     <div class="ticker-item">Python · SQL</div>
@@ -1535,7 +1483,7 @@ footer {
       to anyone.
     </div>
     <div class="about-right r" style="transition-delay:.2s">
-      <p>Data Science student at <strong>Externado University of Colombia</strong>, researcher in the Graph Theory  group, and former Junior Operations Assistant at <strong>Uber Technologies</strong> — where I automated financial reporting pipelines for a 13-country region.</p>
+      <p>Data Science student at <strong>Externado University of Colombia</strong>, researcher in the Graph Theory group, and former Junior Operations Assistant at <strong>Uber Technologies</strong> — where I automated financial reporting pipelines for a 13-country region.</p>
       <p>I'm also a <strong>WiDS Stanford Ambassador</strong> and <strong>Women Techmakers Ambassador 2026</strong>, building community for women who belong in this field. And I host <strong>Atípicos</strong>, a podcast that makes algorithms feel human.</p>
       <div class="about-tags">
         <span class="atag">PyMC · ArviZ</span>
@@ -1567,9 +1515,7 @@ footer {
       <h2 class="sec-title">Exper<em>ience</em></h2>
       <div class="sec-rule"></div>
     </div>
-
     <div class="exp-list">
-
       <div class="exp-item r">
         <div class="exp-left">
           <div class="exp-date">Oct 2025 — Feb 2026</div>
@@ -1577,7 +1523,7 @@ footer {
         </div>
         <div class="exp-right">
           <div class="exp-title">Junior Operations Assistant</div>
-          <div class="exp-role-label">Strategy & Planning · ACAC Region</div>
+          <div class="exp-role-label">Strategy &amp; Planning · ACAC Region</div>
           <div class="exp-desc">
             <strong>① Financial Reporting Automation</strong> — Built an automated pipeline generating daily reports of financial data and more than 22 operational KPIs, delivered directly to General Managers across all ACAC countries. Zero manual work, every morning.<br><br>
             <strong>② Operational Dashboard Management</strong> — Rebuilt the full suite of dashboards covering 13 countries. Ensured real-time data integrity and stakeholder-ready visualization at every level.<br><br>
@@ -1590,7 +1536,6 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="exp-item r" style="transition-delay:.1s">
         <div class="exp-left">
           <div class="exp-date">2026 — Present</div>
@@ -1599,16 +1544,13 @@ footer {
         <div class="exp-right">
           <div class="exp-title">Women Techmakers Ambassador</div>
           <div class="exp-role-label">Global Program · AI Leadership</div>
-          <div class="exp-desc">
-            Global ambassador for <strong>Women Techmakers</strong>, integrated with Technovation and supported by Google & UNICEF. Promotes AI leadership, the <strong>#BreakthePattern</strong> movement, and the Oxford Saïd Business School AI Certificate pathway.
-          </div>
+          <div class="exp-desc">Global ambassador for <strong>Women Techmakers</strong>, integrated with Technovation and supported by Google &amp; UNICEF. Promotes AI leadership, the <strong>#BreakthePattern</strong> movement, and the Oxford Saïd Business School AI Certificate pathway.</div>
           <div class="exp-tags">
             <span class="etag etag-m">Women Techmakers</span><span class="etag etag-m">AI Leadership</span>
             <span class="etag etag-g">Community</span><span class="etag etag-e">Oxford Certificate</span>
           </div>
         </div>
       </div>
-
       <div class="exp-item r" style="transition-delay:.15s">
         <div class="exp-left">
           <div class="exp-date">Nov 2023 — Present</div>
@@ -1617,33 +1559,27 @@ footer {
         <div class="exp-right">
           <div class="exp-title">WiDS Ambassador</div>
           <div class="exp-role-label">Women in Data Science · Global Network</div>
-          <div class="exp-desc">
-            Part of the WiDS global network — mission: 30% women in Data Science by 2030. Events, mentoring, and community building in Colombia.
-          </div>
+          <div class="exp-desc">Part of the WiDS global network — mission: 30% women in Data Science by 2030. Events, mentoring, and community building in Colombia.</div>
           <div class="exp-tags">
             <span class="etag etag-m">Community</span><span class="etag etag-m">Gender Equity in Tech</span>
           </div>
         </div>
       </div>
-
       <div class="exp-item r" style="transition-delay:.2s">
         <div class="exp-left">
           <div class="exp-date">Aug 2023 — Present</div>
           <div class="exp-company-tag">Externado University</div>
         </div>
         <div class="exp-right">
-          <div class="exp-title">Researcher & Program Rep.</div>
-          <div class="exp-role-label">Graph Theory & ANN Group · Dept. of Mathematics</div>
-          <div class="exp-desc">
-            Student representative for the Data Science program. Researcher building ML models for the government-funded <strong>ATENEA project</strong>. Speaker at <strong>QUITEL 2025</strong>: <em>"Application of graph similarity for the identification of molecules inhibiting influenza."</em> Creator of the podcast <strong>Atípicos</strong>.
-          </div>
+          <div class="exp-title">Researcher &amp; Program Rep.</div>
+          <div class="exp-role-label">Graph Theory &amp; ANN Group · Dept. of Mathematics</div>
+          <div class="exp-desc">Student representative for the Data Science program. Researcher building ML models for the government-funded <strong>ATENEA project</strong>. Speaker at <strong>QUITEL 2025</strong>: <em>"Application of graph similarity for the identification of molecules inhibiting influenza."</em> Creator of the podcast <strong>Atípicos</strong>.</div>
           <div class="exp-tags">
             <span class="etag etag-g">Research</span><span class="etag etag-g">Neural Networks</span><span class="etag etag-g">Graph Theory</span>
             <span class="etag etag-e">Podcast</span><span class="etag etag-e">QUITEL 2025</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -1679,7 +1615,7 @@ footer {
       </div>
       <div class="skill-card r" style="transition-delay:.16s">
         <span class="skill-icon"></span>
-        <div class="skill-name">Visualization & BI</div>
+        <div class="skill-name">Visualization &amp; BI</div>
         <div class="skill-items">
           <div class="skill-item">Power BI · Tableau</div>
           <div class="skill-item">Matplotlib · Seaborn · Plotly</div>
@@ -1689,7 +1625,7 @@ footer {
       </div>
       <div class="skill-card r" style="transition-delay:.08s">
         <span class="skill-icon"></span>
-        <div class="skill-name">Stack & Cloud</div>
+        <div class="skill-name">Stack &amp; Cloud</div>
         <div class="skill-items">
           <div class="skill-item">Git / GitHub · Docker</div>
           <div class="skill-item">Google Cloud Platform</div>
@@ -1713,7 +1649,7 @@ footer {
         <div class="skill-name">Leadership</div>
         <div class="skill-items">
           <div class="skill-item">Science Communication</div>
-          <div class="skill-item">Research & Academic Writing</div>
+          <div class="skill-item">Research &amp; Academic Writing</div>
           <div class="skill-item">Community Building</div>
           <div class="skill-item">Project Management</div>
         </div>
@@ -1772,7 +1708,7 @@ footer {
       <div class="quitel-text r rl">
         <h3>Graph Similarity for<br><em>Influenza</em> Inhibitors</h3>
         <p>Presented at the <strong>Congress of Theoretical Chemists of Latin Expression (QUITEL 2025)</strong> — one of the most important computational chemistry gatherings in Latin America. The research applies graph similarity algorithms to identify molecules and proteins capable of inhibiting influenza.</p>
-        <p>This work is part of the <strong>Universidad de los Andes project</strong>, funded by the chemist association , and developed in collaboration with the <strong>Doctorate in Computational Chemistry at Universidad de los Andes</strong> — where mathematicians and chemists meet to build smarter, faster discovery pipelines.</p>
+        <p>This work is part of the <strong>Universidad de los Andes project</strong>, funded by the chemist association, and developed in collaboration with the <strong>Doctorate in Computational Chemistry at Universidad de los Andes</strong> — where mathematicians and chemists meet to build smarter, faster discovery pipelines.</p>
         <p>The core insight: if two molecules share a similar graph structure, they likely share functional behavior. We leverage that to reduce the search space for potential inhibitors dramatically.</p>
         <div class="model-pills" style="margin-top:24px;">
           <span class="mpill">Graph Theory</span>
@@ -1793,7 +1729,7 @@ footer {
         </div>
         <div class="quitel-fact">
           <div class="qf-label">Research Group</div>
-          <div class="qf-value">Graph Theory & ANN <em>— Dept. of Mathematics, Externado University</em></div>
+          <div class="qf-value">Graph Theory &amp; ANN <em>— Dept. of Mathematics, Externado University</em></div>
         </div>
         <div class="quitel-fact">
           <div class="qf-label">Topic</div>
@@ -1802,64 +1738,32 @@ footer {
       </div>
     </div>
 
-    <!-- Photo grid — replace src with your real LinkedIn photos -->
-    <div class="photo-grid r">
+    <!-- ═══ PHOTO GRID — QUITEL 2025 ═══ -->
+    <div class="photo-grid r" style="grid-template-columns: 1fr 1fr;">
 
-      <!-- PHOTO 1 — tall feature -->
+      <!-- FOTO 1 (tall): Sharik y coautora frente al póster -->
       <a href="https://www.linkedin.com/in/sharikg/" target="_blank" class="photo-slot tall">
-        <div class="photo-slot-placeholder">
-          <div class="ph-icon">📸</div>
-          <div class="ph-text">Add your QUITEL photo here<br><span style="color:var(--fern);opacity:0.6">Replace src with image URL</span></div>
-        </div>
-        <!-- <img src="YOUR_PHOTO_URL_1" alt="Sharik at QUITEL 2025"> -->
-        <div class="photo-overlay"><div class="photo-overlay-text">Ver en LinkedIn</div></div>
+        <img src="Quitel_1.jpg" alt="Sharik Garzón y coautora presentando el póster en QUITEL 2025">
+        <div class="photo-overlay"><div class="photo-overlay-text">QUITEL 2025 — Póster 41</div></div>
       </a>
 
-      <!-- PHOTO 2 -->
+      <!-- FOTO 2: Sharik con el equipo investigador -->
       <a href="https://www.linkedin.com/in/sharikg/" target="_blank" class="photo-slot">
-        <div class="photo-slot-placeholder">
-          <div class="ph-icon">📸</div>
-          <div class="ph-text">Add your QUITEL photo here</div>
-        </div>
-        <!-- <img src="YOUR_PHOTO_URL_2" alt="QUITEL 2025 presentation"> -->
-        <div class="photo-overlay"><div class="photo-overlay-text">Ver en LinkedIn</div></div>
+        <img src="Quitel_2.jpg" alt="Sharik con colaboradores en QUITEL 2025">
+        <div class="photo-overlay"><div class="photo-overlay-text">Con el equipo investigador</div></div>
       </a>
 
-      <!-- PHOTO 3 -->
+      <!-- FOTO 3: Foto grupal del congreso -->
       <a href="https://www.linkedin.com/in/sharikg/" target="_blank" class="photo-slot">
-        <div class="photo-slot-placeholder">
-          <div class="ph-icon">📸</div>
-          <div class="ph-text">Add your QUITEL photo here</div>
-        </div>
-        <!-- <img src="YOUR_PHOTO_URL_3" alt="QUITEL 2025 team"> -->
-        <div class="photo-overlay"><div class="photo-overlay-text">Ver en LinkedIn</div></div>
-      </a>
-
-      <!-- PHOTO 4 -->
-      <a href="https://www.linkedin.com/in/sharikg/" target="_blank" class="photo-slot">
-        <div class="photo-slot-placeholder">
-          <div class="ph-icon">📸</div>
-          <div class="ph-text">Add your QUITEL photo here</div>
-        </div>
-        <!-- <img src="YOUR_PHOTO_URL_4" alt="QUITEL 2025 congress"> -->
-        <div class="photo-overlay"><div class="photo-overlay-text">Ver en LinkedIn</div></div>
-      </a>
-
-      <!-- PHOTO 5 -->
-      <a href="https://www.linkedin.com/in/sharikg/" target="_blank" class="photo-slot">
-        <div class="photo-slot-placeholder">
-          <div class="ph-icon">📸</div>
-          <div class="ph-text">Add your QUITEL photo here</div>
-        </div>
-        <!-- <img src="YOUR_PHOTO_URL_5" alt="QUITEL 2025"> -->
-        <div class="photo-overlay"><div class="photo-overlay-text">Ver en LinkedIn</div></div>
+        <img src="Quitel_3.jpg" alt="Foto grupal del Congreso QUITEL 2025">
+        <div class="photo-overlay"><div class="photo-overlay-text">Congreso QUITEL 2025</div></div>
       </a>
 
     </div>
 
     <!-- LinkedIn CTA -->
     <div style="display:flex;justify-content:center;margin-top:24px;" class="r">
-      <a href="https://www.linkedin.com/in/sharikg/" target="_blank" class="btn btn-outline" style="border-color:rgba(141,192,126,0.3);color:var(--fern);border-radius:2px;padding:14px 36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;">
+      <a href="https://www.linkedin.com/in/sharikg/" target="_blank" style="border:1px solid rgba(141,192,126,0.3);color:var(--fern);border-radius:2px;padding:14px 36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='rgba(141,192,126,0.08)'" onmouseout="this.style.background='transparent'">
         Ver galería completa en LinkedIn ↗
       </a>
     </div>
@@ -1876,33 +1780,19 @@ footer {
       <div class="sec-rule"></div>
     </div>
 
-    <!-- Context intro -->
     <div class="bayes-context r">
       <div class="bc-left">
         <h3>What does the model<br><em>actually tell us</em> about tourists?</h3>
         <p>A Bayesian Hierarchical Logistic Regression built with PyMC to predict premium accommodation choice in the Canary Islands. The key insight of the hierarchical approach: each <strong>country of residence gets its own learned intercept</strong> — revealing deep patterns in how nationalities approach travel spending, without overfitting to small groups.</p>
       </div>
       <div class="bc-pills">
-        <div class="bc-pill">
-          <div class="bcp-num">11</div>
-          <div class="bcp-label">Countries modeled</div>
-        </div>
-        <div class="bc-pill">
-          <div class="bcp-num">15</div>
-          <div class="bcp-label">Predictors</div>
-        </div>
-        <div class="bc-pill">
-          <div class="bcp-num">1.01</div>
-          <div class="bcp-label">Max logit gap<br><span style="font-size:9px;opacity:0.6">Sweden vs Spain</span></div>
-        </div>
-        <div class="bc-pill">
-          <div class="bcp-num">94%</div>
-          <div class="bcp-label">HDI intervals</div>
-        </div>
+        <div class="bc-pill"><div class="bcp-num">11</div><div class="bcp-label">Countries modeled</div></div>
+        <div class="bc-pill"><div class="bcp-num">15</div><div class="bcp-label">Predictors</div></div>
+        <div class="bc-pill"><div class="bcp-num">1.01</div><div class="bcp-label">Max logit gap<br><span style="font-size:9px;opacity:0.6">Sweden vs Spain</span></div></div>
+        <div class="bc-pill"><div class="bcp-num">94%</div><div class="bcp-label">HDI intervals</div></div>
       </div>
     </div>
 
-    <!-- MAIN VISUAL: dot plot -->
     <div class="dotplot-card r">
       <div class="chart-heading">Premium Lodging Propensity by Country of Residence</div>
       <div class="chart-sub">Posterior mean intercept · 94% Highest Density Interval · Countries sorted highest → lowest · Zero line = global average</div>
@@ -1911,18 +1801,15 @@ footer {
       </div>
     </div>
 
-    <!-- Country detail rows — richer than cards -->
     <div class="country-rows" id="countryRows"></div>
 
-    <!-- CONCLUSIONS — editorial big text -->
     <div class="conclusions-block">
       <div class="cb-divider r"><div class="cbd-line"></div><span class="cbd-label">Key Findings</span><div class="cbd-line"></div></div>
-
       <div class="cb-grid">
         <div class="cb-item r featured-finding">
           <div class="cbf-num">01</div>
           <div class="cbf-title">Northern Europeans are the<br><em>premium segment</em></div>
-          <div class="cbf-body">Sweden, the Netherlands, and Norway show posterior probabilities of premium accommodation 40–60% above the global average. Their travel behavior signals that the Canary Islands is a <strong>planned, deliberate luxury destination</strong> for Nordic visitors — not a casual getaway. Hospitality marketing for these markets should emphasize quality, exclusivity, and premium amenities.</div>
+          <div class="cbf-body">Sweden, the Netherlands, and Norway show posterior probabilities of premium accommodation 40–60% above the global average. Their travel behavior signals that the Canary Islands is a <strong>planned, deliberate luxury destination</strong> for Nordic visitors. Hospitality marketing for these markets should emphasize quality, exclusivity, and premium amenities.</div>
           <div class="cbf-flags">
             <span class="cf-tag pos">🇸🇪 Suecia +0.63</span>
             <span class="cf-tag pos">🇳🇱 Países Bajos +0.57</span>
@@ -1930,7 +1817,6 @@ footer {
             <span class="cf-tag pos">🇬🇧 UK +0.48</span>
           </div>
         </div>
-
         <div class="cb-col-right">
           <div class="cb-item r" style="transition-delay:.12s">
             <div class="cbf-num">02</div>
@@ -1942,17 +1828,15 @@ footer {
               <span class="cf-tag neg">🇮🇹 Italia −0.15</span>
             </div>
           </div>
-
           <div class="cb-item r" style="transition-delay:.24s">
             <div class="cbf-num">03</div>
             <div class="cbf-title">Trip investment<br><em>amplifies the effect</em></div>
-            <div class="cbf-body">Across all nationalities, tourists who spend more on accommodation and stay more nights overwhelmingly select premium categories. The model captures a self-reinforcing loop: <strong>longer trips → higher nightly budgets → premium selection</strong>. Meanwhile, price sensitivity pushes in the opposite direction — the most cost-conscious travelers rarely choose premium regardless of nationality.</div>
+            <div class="cbf-body">Across all nationalities, tourists who spend more on accommodation and stay more nights overwhelmingly select premium categories. The model captures a self-reinforcing loop: <strong>longer trips → higher nightly budgets → premium selection</strong>. Meanwhile, price sensitivity pushes in the opposite direction.</div>
           </div>
-
           <div class="cb-item r" style="transition-delay:.36s">
             <div class="cbf-num">04</div>
             <div class="cbf-title">Digital channels<br><em>predict quality seekers</em></div>
-            <div class="cbf-body">Tourists who discovered the destination via <strong>internet and social media</strong> show measurably higher premium propensity than those arriving through friends, family, or previous visits. This signals an emerging digitally-informed segment actively seeking quality — a high-value target for hospitality brands investing in social content.</div>
+            <div class="cbf-body">Tourists who discovered the destination via <strong>internet and social media</strong> show measurably higher premium propensity. This signals an emerging digitally-informed segment actively seeking quality — a high-value target for hospitality brands investing in social content.</div>
           </div>
         </div>
       </div>
@@ -1969,7 +1853,6 @@ footer {
       <div class="contact-sub">Open to Data Science, Operations Analytics, and Research roles. Bogotá — available remotely. The work is real. Let's talk.</div>
     </div>
     <div class="contact-links r" style="transition-delay:.2s">
-      <a href="/cdn-cgi/l/email-protection#62160710030c4c110a03100b095322050f030b0e4c010d0f" class="contact-link"><span class="icon">✉</span><span class="__cf_email__" data-cfemail="51253423303f7f22393023383a6011363c30383d7f323e3c">[email&#160;protected]</span></a>
       <a href="tel:+573018010440" class="contact-link"><span class="icon">📞</span>(+57) 301 801 0440</a>
       <a href="https://bento.me/sharikg" target="_blank" class="contact-link"><span class="icon">🌿</span>bento.me/sharikg</a>
       <a href="https://www.technovation.org/women-techmakers/" target="_blank" class="contact-link"><span class="icon">🌐</span>Women Techmakers</a>
@@ -1982,7 +1865,7 @@ footer {
   <span>Data Scientist · Bogotá, Colombia</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── CURSOR ── */
 const cur = document.getElementById('cur');
 const ring = document.getElementById('curRing');
@@ -2089,7 +1972,6 @@ function buildCountryRows() {
   });
 }
 
-/* ── TRIGGER on scroll ── */
 let dotDone = false, rowsDone = false;
 const bayesObs = new IntersectionObserver(entries => {
   if (entries[0].isIntersecting) {
